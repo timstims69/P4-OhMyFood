@@ -43,7 +43,8 @@ body {
 
 #Main_function {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #Main_function h1 {
@@ -53,19 +54,57 @@ body {
 .Function_button {
   display: flex;
   justify-content: center;
+  margin-top: 25px;
   border-radius: 20px;
   background-color: #99e2d0;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  width: 70%;
-  height: 70px;
-  margin: 0px 2px 0px 15px;
+  width: 90%;
+  height: 50px;
+  margin-left: 10px;
+  /*L'element est excentré on purpose*/
+  text-align: center;
+}
+
+.fa-store .fa-list-ul .fa-mobile-screen-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #Main_restaurant {
+  background-color: var(--pale-greyish-background);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/*A clarfier */
+#Main_restaurant {
+  padding-left: 15px;
 }
 
-#Main_restaurant h1 {
-  padding-left: 15px;
+.Restaurant_card {
+  display: flex;
+  flex-direction: column;
+  height: 251px;
+  width: 90%;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+.Card_image {
+  object-fit: cover;
+  height: 175px;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 200px;
+  background-color: #353535;
 }
 
 .fa-location-dot {
@@ -74,7 +113,13 @@ body {
 
 .fa-store {
   color: var(--primary-color);
+  display: flex;
 }
+
+.fa-list-ul {
+  display: flex;
+}
+
 .fa-utensils {
   color: white;
 }
