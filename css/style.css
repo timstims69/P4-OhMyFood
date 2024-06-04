@@ -4,13 +4,92 @@
   --tertiary-color: #99e2d0;
   --greyish-background: #eaeaea;
   --pale-greyish-background: #f6f6f6;
+  --title-font: "Shrikhand", serif;
 }
 
 body {
   margin: 0px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto";
 }
+/* Coins des fonts*/
+.shrikhand-regular {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 #Header_logo {
   display: flex;
   justify-content: center;
@@ -25,6 +104,10 @@ body {
   padding: 15px;
 }
 
+.section_title {
+  margin-left: 15px;
+}
+
 #Main_explore {
   text-align: center;
   background-color: var(--pale-greyish-background);
@@ -32,16 +115,22 @@ body {
 
 .Button-purple {
   display: inline-block;
-  background: linear-gradient(to bottom, #ff79da, #9356dc);
+  background: linear-gradient(to bottom right, #9356dc 11%, #ff79da 94%);
   border-radius: 25px;
   font-weight: 600;
   padding: 0px 20px 0px 20px;
 }
+
+.Button-purple:hover {
+  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
+}
+
 #Button_text {
   color: white;
 }
 
 #Main_function {
+  @include mxntest;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -54,24 +143,23 @@ body {
 .Function_button {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 25px;
   border-radius: 20px;
-  background-color: #99e2d0;
+  background-color: var(--pale-greyish-background);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   width: 90%;
   height: 50px;
   margin-left: 10px;
-  /*L'element est excentré on purpose*/
-  text-align: center;
+  /*L'element est excentré on purpose afin d'y ajouter les
+     petit icones de chiffres violets*/
 }
 
-.fa-store .fa-list-ul .fa-mobile-screen-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Function_button > .fa-solid {
+  padding-right: 15px;
 }
 
-#Main_restaurant {
+.Function_number #Main_restaurant {
   background-color: var(--pale-greyish-background);
   display: flex;
   flex-wrap: wrap;
@@ -85,12 +173,24 @@ body {
 .Restaurant_card {
   display: flex;
   flex-direction: column;
-  height: 251px;
+  height: 320px;
   width: 90%;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin-top: 15px;
+}
+
+.Card_title {
+  padding-left: 15px;
+  margin: 0px;
+}
+.Card_subtitle {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0px;
 }
 
 .Card_image {
@@ -103,10 +203,38 @@ body {
 footer {
   display: flex;
   flex-direction: column;
-  padding: 200px;
+
+  height: 375px;
+  margin-top: 100px;
   background-color: #353535;
 }
 
+#footer_logo {
+  font-family: var(--title-font);
+  color: white;
+  padding-left: 15px;
+}
+
+.Footer_lines {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.Footer_lines-thickerFont {
+  font-weight: 700;
+  color: white;
+}
+
+.Footer_lines-thinnerFont {
+  font-weight: 400;
+  color: white;
+}
+
+.Footer_lines > .fa-solid {
+  padding-right: 15px;
+}
+
+/*Icons section*/
 .fa-location-dot {
   margin-right: 10px;
 }
@@ -120,10 +248,40 @@ footer {
   display: flex;
 }
 
+.fa-heart:hover {
+  /*A comprendre*/
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  -webkit-background-clip: text; /* Pour differend navigateur */
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+
 .fa-utensils {
+  display: inline;
+  justify-content: center;
   color: white;
 }
 
-.handshake-angle {
+.fa-handshake-angle {
   color: white;
+  display: inline-block;
 }
+
+@mixin mxntest {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*
+-Pourquoi les icones sont excentrés ? 
+> Il fallait utiliser Align items center
+afin de les aligner verticalement
+
+-Comment faire pour changer la taille et 
+ la couleure du svg logo footer ? 
+ >  V
+
+-Comment faire pour ajuster les textes dans les cartes ?
+*/
