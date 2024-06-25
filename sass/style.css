@@ -1,0 +1,329 @@
+@charset "UTF-8";
+/*Besyata Dishmaya*/
+@media (max-width: 767.98px) {
+  :root {
+    --primary-color: #9356dc;
+    --secondary-color: #ff79da;
+    --tertiary-color: #99e2d0;
+    --greyish-background: #eaeaea;
+    --pale-greyish-background: #f6f6f6;
+    --title-font: "Shrikhand", serif;
+  }
+  body {
+    margin: 0px;
+    font-family: "Roboto";
+  }
+  /* Coins des fonts*/
+  .shrikhand-regular {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  #Header_logo {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+  }
+  #Header_location {
+    display: flex;
+    justify-content: center;
+    background-color: var(--greyish-background);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
+  }
+  .section_title {
+    margin-left: 15px;
+  }
+  #Main_explore {
+    text-align: center;
+    background-color: var(--pale-greyish-background);
+  }
+  .Button-purple {
+    display: inline-block;
+    background: linear-gradient(to bottom right, #9356dc 11%, #ff79da 94%);
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 0px 20px 0px 20px;
+  }
+  #Button_text {
+    color: white;
+  }
+  #Main_function {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #Main_function h1 {
+    padding-left: 15px;
+  }
+  .Function_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 20px;
+    background-color: var(--pale-greyish-background);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 50px;
+    margin-left: 10px;
+    /*L'element est excentré on purpose afin d'y ajouter les
+       petit icones de chiffres violets*/
+  }
+  .Function_button > .fa-solid {
+    padding-right: 15px;
+  }
+  .Function_number #Main_restaurant {
+    background-color: var(--pale-greyish-background);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  /*A clarfier */
+  #Main_restaurant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Restaurant_card {
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 90%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+  }
+  .Card_image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 175px;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .Card_title {
+    padding-left: 15px;
+    margin: 0px;
+  }
+  .Card_subtitle {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0px;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    height: 375px;
+    margin-top: 100px;
+    background-color: #353535;
+  }
+  #footer_logo {
+    font-family: var(--title-font);
+    color: white;
+    padding-left: 15px;
+  }
+  .Footer_lines {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+  .Footer_lines-thickerFont {
+    font-weight: 700;
+    color: white;
+  }
+  .Footer_lines-thinnerFont {
+    font-weight: 400;
+    color: white;
+  }
+  .Footer_lines > .fa-solid {
+    padding-right: 15px;
+  }
+  /*Icons section*/
+  .fa-location-dot {
+    margin-right: 10px;
+  }
+  .fa-store {
+    color: var(--primary-color);
+    display: flex;
+  }
+  .fa-list-ul {
+    display: flex;
+  }
+  .fa-heart:hover {
+    /*A comprendre*/
+    background-image: linear-gradient(to top, #9356dc, #ff79da);
+    -webkit-background-clip: text; /* Pour differend navigateur */
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+  }
+  .fa-utensils {
+    display: inline;
+    justify-content: center;
+    color: white;
+  }
+  .fa-handshake-angle {
+    color: white;
+    display: inline-block;
+  }
+}
+/*
+  -Pourquoi les icones sont excentrés ? 
+  > Il fallait utiliser Align items center
+  afin de les aligner verticalement
+
+  -Comment faire pour changer la taille et 
+   la couleure du svg logo footer ? 
+   >  V
+
+  -Comment faire pour ajuster les textes dans les cartes ?
+  */
+/*--------------------------------------Section pages menu-------------------------------------------------*/
+/*Ce fichier css est utilsé pour l'ensemble des pages secondaire */
+.fleche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+}
+
+.Header_menu {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.Header_title {
+  font-family: var(--title-font);
+  font-size: larger;
+  align-items: center;
+  margin: auto; /* WIP Pourquoi cela fonctionne ?*/
+}
+
+.Top_image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Top_image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.Main_menu {
+  position: relative;
+  background-color: var(--pale-greyish-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px 25px 0px 0px;
+  margin-top: -20px; /*valeure negative poru chevauchement sur img*/
+}
+
+#Titre_restaurant {
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.Card_group_title {
+  font-family: "roboto";
+  font-weight: 400;
+}
+
+.carte {
+  position: relative;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: 1px solid #fb0505;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: red;
+  width: 95%;
+  margin: 5px 0px 5px 0px;
+}
+
+.haut-gauche {
+  align-self: flex-start;
+  padding-bottom: 25px;
+}
+
+.bas {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bas-gauche {
+  align-self: flex-start;
+  justify-content: space-between;
+}
+
+.bas-droite {
+  align-self: flex-start;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  background-color: #353535;
+}
+
+.fa-utensils {
+  display: inline;
+  justify-content: center;
+  color: white;
+}
+
+.fa-handshake-angle {
+  color: white;
+  display: inline-block;
+}
+
+.fa-arrow-left {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+/*Border Bottom pour soulignage de titre *//*# sourceMappingURL=style.css.map */
