@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/styleRichone.css" />
+    <link rel="stylesheet" href="/sass/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oh My Food</title>
 
@@ -28,19 +28,26 @@
     />
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div id="Header_logo">
         <img
           src="/Images et textes Ohmyfood/images/logo/ohmyfood@2x.svg"
           alt="Logo Oh My Food"
         />
       </div>
-      <div id="Header_location">
+      <div class="Header_location">
         <i class="fa-solid fa-location-dot"></i> Paris, Belleville
       </div>
+    </header> -->
+    <header class="Home-header">
+      <img
+        src="/Images et textes Ohmyfood/images/logo/ohmyfood@2x.svg"
+        alt="Logo Oh My Food"
+      />
+      <span> <i class="fa-solid fa-location-dot"></i> Paris, Belleville </span>
     </header>
     <main>
-      <div id="Main_explore">
+      <div class="Main_explore">
         <h1>Réservez le menu qui vous convient</h1>
 
         <p>Découvrer des restaurant d'exception, sélectionnés par nos soins.</p>
@@ -52,6 +59,7 @@
       <h1 class="section_title">Fonctionnement</h1>
       <div id="Main_function">
         <div class="Function_button">
+          <span class="Function_pastille">1</span>
           <i
             class="fa-solid fa-mobile-screen-button"
             class="Function_button_icon"
@@ -59,10 +67,12 @@
           Choisissez un restaurant
         </div>
         <div class="Function_button">
+          <span class="Function_pastille">2</span>
           <i class="fa-solid fa-list-ul"></i>
           Composez votre menu
         </div>
         <div class="Function_button">
+          <span class="Function_pastille">3</span>
           <i class="fa-solid fa-store" class="tmtc"></i>
           Dégustez au restaurant
         </div>
