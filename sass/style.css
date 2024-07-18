@@ -103,6 +103,10 @@ body {
   font-weight: 600;
   padding: 0px 20px 0px 20px;
 }
+.Button-purple:hover {
+  transform: rotate(50deg);
+  transition: ease-in-out 450ms;
+}
 
 #Button_text {
   color: white;
@@ -124,7 +128,7 @@ body {
   margin-top: 25px;
   border-radius: 20px;
   background-color: var(--pale-greyish-background);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
   width: 90%;
   height: 70px;
   margin-left: 10px;
@@ -331,17 +335,34 @@ footer {
 .carte {
   position: relative;
   border-radius: 15px;
-  background-color: #ffffff;
+  background-color: rgb(87, 183, 32);
   border: 1px solid #fb0505;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  background-color: red;
   width: 95%;
   margin: 5px 0px 5px 0px;
+  display: flex;
+  overflow: hidden;
+}
+.carte:focus .Animation_card-end {
+  width: 15%;
+  transition: 200ms;
+  opacity: 1;
+}
+
+.Animation_card {
+  padding: 20px;
+}
+
+.Animation_card-end {
+  background-color: #99e2d0;
+  width: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
 }
 
 .haut-gauche {
@@ -385,6 +406,11 @@ footer {
   display: flex;
   justify-content: flex-start;
   padding-left: 10px;
+}
+
+.fa-circle-check {
+  color: white;
+  font-size: xx-large;
 }
 
 /*Border Bottom pour soulignage de titre *//*# sourceMappingURL=style.css.map */
