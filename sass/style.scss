@@ -3,76 +3,79 @@
 
 /*Besyata Dishmaya*/
 
-:root {
-  --primary-color: #9356dc;
-  --secondary-color: #ff79da;
-  --tertiary-color: #99e2d0;
-  --greyish-background: #eaeaea;
-  --pale-greyish-background: #f6f6f6;
-  --title-font: "Shrikhand", serif;
+html,
+body {
+  @include BunchOfFonts;
+  height: 100%;
+  width: 100%;
 }
 
-body {
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 3s linear both;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#primaryPage_body {
   margin: 0px;
   font-family: "Roboto";
-}
-/* Coins des fonts*/
-.shrikhand-regular {
-  font-family: "Shrikhand", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+  margin: 0;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
-.roboto-thin {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+  @include Fade_out_animation;
 }
-
-.roboto-light {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.roboto-regular {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.roboto-medium {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.roboto-black {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+.Fade_out--animation {
 }
 
 .Home-header {
   display: flex;
   width: 100%;
+  height: 63px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  span {
-    display: flex;
-    background-color: grey;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-  }
+  box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  position: relative;
+  background-color: $WhiteBackground;
+}
+#Home_header-location {
+  display: flex;
+  background-color: $LocationColor;
+  box-shadow: 0 5px 6px -3px #00000030;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  z-index: 1;
+  position: relative;
 }
 
 #Header_logo {
@@ -84,34 +87,42 @@ body {
 #Header_location {
   display: flex;
   justify-content: center;
-  background-color: var(--greyish-background);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: $GreyBackground;
+  box-shadow: 1px 1.4px 0.5px 2.5px black;
   padding: 15px;
 }
 
 .section_title {
-  margin-left: 15px;
+  padding-left: 25px;
+}
+
+.Main_explore_title {
+  margin: 0px;
+  padding-top: 15px;
 }
 
 .Main_explore {
   text-align: center;
-  background-color: var(--pale-greyish-background);
+  background-color: $GreyBackground;
+  height: 250px;
 }
 
 .Button-purple {
   display: inline-block;
-  background: linear-gradient(to bottom right, #9356dc 11%, #ff79da 94%);
+  background: linear-gradient(
+    to bottom right,
+    $Primary-color 11%,
+    $Secondary-color 94%
+  );
   border-radius: 25px;
   font-weight: 600;
-  padding: 0px 20px 0px 20px;
-
-  &:hover {
-    transform: rotate(50deg);
-    transition: ease-in-out 450ms;
-  }
+  padding: 0px 50px 0px 50px;
+  transition: 1s;
 }
-
-.Button-purple:hover :focus {
+.Button-purple:hover {
+  filter: opacity(0.8);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  transition: 1s;
 }
 
 #Button_text {
@@ -119,13 +130,11 @@ body {
 }
 
 #Main_function {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  background-color: white;
 }
-
-#Main_function h1 {
-  padding-left: 15px;
+.Main_function-centerizer {
+  @include centerizer;
+  flex-direction: column;
 }
 
 .Function_button {
@@ -133,7 +142,7 @@ body {
   align-items: center;
   margin-top: 25px;
   border-radius: 20px;
-  background-color: var(--pale-greyish-background);
+  background-color: $GreyBackground;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
   width: 90%;
   height: 70px;
@@ -148,7 +157,7 @@ body {
 }
 
 .Function_pastille {
-  background-color: var(--primary-color);
+  background-color: $Primary-color;
   position: relative;
   border-radius: 50%;
   font-size: 13px;
@@ -158,7 +167,7 @@ body {
 }
 
 .Function_number #Main_restaurant {
-  background-color: var(--pale-greyish-background);
+  background-color: $GreyBackground;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -167,14 +176,17 @@ body {
 #Main_restaurant {
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
+a {
+}
 .Restaurant_card {
   display: flex;
   flex-direction: column;
-  height: 320px;
+  height: 251px;
+
   width: 90%;
   border-radius: 15px;
   background-color: white;
@@ -183,40 +195,70 @@ body {
 }
 
 .Card_image_container {
+  display: flex;
+  height: 66%;
+  justify-content: flex-end;
 }
 
+.Nouveau {
+  @include centerizer;
+  color: #008766;
+  position: absolute;
+  background-color: $Tertiary-color;
+  border-radius: 2px;
+  width: 80px;
+  height: 29px;
+  margin-right: 15px;
+}
 .Card_image {
   object-fit: cover;
-  height: 175px;
+  height: 100%;
   width: 100%;
   border-radius: 15px 15px 0px 0px;
 }
-
-.Card_title {
-  padding-left: 15px;
-  margin: 0px;
-}
-.Card_subtitle {
+.Master_container {
   display: flex;
-  justify-content: space-between;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0px;
+  height: 33%;
 }
 
-footer {
+.Text_container {
   display: flex;
   flex-direction: column;
+  flex: 8;
+}
 
+.Card_title {
+  padding: 15px 15px 0px 15px;
+  margin: 0px;
+}
+
+.Card_heart_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+
+.Card_subtitle {
+  display: flex;
+  // justify-content: space-between;
+  flex: 1;
+  padding: 7px 15px 15px 15px;
+}
+
+.Card_heart {
+}
+
+#Footer_index {
   height: 375px;
   margin-top: 100px;
-  background-color: #353535;
 }
 
 #footer_logo {
-  font-family: var(--title-font);
+  font-family: $Title-font;
   color: white;
   padding-left: 15px;
+  padding-top: 10.1px;
 }
 
 .Footer_lines {
@@ -233,6 +275,24 @@ footer {
   font-weight: 400;
   color: white;
 }
+.Contact {
+  text-decoration: none;
+  color: white;
+}
+
+.Mailto {
+  text-decoration: none;
+  color: white;
+}
+
+#Footer_index {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+
+  background-color: $FooterColor;
+}
 
 .Footer_lines > .fa-solid {
   padding-right: 15px;
@@ -244,7 +304,7 @@ footer {
 }
 
 .fa-store {
-  color: var(--primary-color);
+  color: $Primary-color;
   display: flex;
 }
 
@@ -252,13 +312,19 @@ footer {
   display: flex;
 }
 
+.fa-heart {
+  -webkit-text-stroke: 1.5px white;
+}
+
 .fa-heart:hover {
   /*A comprendre*/
-  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  background-image: linear-gradient(to top, $Primary-color, $Secondary-color);
   -webkit-background-clip: text; /* Pour differend navigateur */
   background-clip: text;
   color: transparent;
   font-weight: 900;
+  transition: 1s;
+  border: none;
 }
 
 .fa-utensils {
@@ -271,31 +337,100 @@ footer {
   color: white;
   display: inline-block;
 }
+// }
 
+@media (min-width: 767px) {
+  .Home-header {
+    height: 98px;
+  }
+
+  #primaryPage_body {
+    background-color: $GreyBackground;
+    font-family: "Roboto";
+  }
+  .section_title--aligner {
+    margin: 0 auto;
+  }
+  #Main_function {
+    padding: 20px 0px 40px 0px;
+  }
+
+  .Main_function-centerizer {
+    @include centerizer;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .Main_explore {
+    height: 196px;
+  }
+
+  #Main_restaurant {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+    height: 750px;
+  }
+
+  .Restaurant_card {
+    display: flex;
+    flex-direction: column;
+    height: 251px;
+    height: 45%;
+    width: 45%;
+    margin-bottom: 50px;
+  }
+
+  #Footer_index {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+    height: 114px;
+    background-color: $FooterColor;
+  }
+
+  #footer_logo {
+    font-family: $Title-font;
+    color: white;
+    padding-left: 15px;
+  }
+
+  .Footer_lines {
+    display: flex;
+    justify-content: stretch;
+  }
+}
 /*
-  -Pourquoi les icones sont excentrés ? 
-  > Il fallait utiliser Align items center
-  afin de les aligner verticalement
-  
-  -Comment faire pour changer la taille et 
-   la couleure du svg logo footer ? 
-   >  V
-  
-  -Comment faire pour ajuster les textes dans les cartes ?
+
+Commentr  gerer le responsive de main restaurant ? 
+certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
+ 
+  -How do i adjust the header shadow of the index page ? 
+   i cant seem to put one over and under (See example : Screenshot)
+
+   -How do i set the footer of index on row reverse in desktop mode 
+
+   -How do i put the cards in 2X2 in index
   */
 
 /*--------------------------------------Section pages menu-------------------------------------------------*/
 
-/*Ce fichier css est utilsé pour l'ensemble des pages secondaire */
-
-body /*si besoin, mettre class speciale au body pages menu*/ {
+#secondaryPage_body {
+  background-color: $WhiteBackground;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  margin: 0;
 }
 
 .fleche {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0px;
+  position: absolute;
+  left: 0;
 }
 
 .Header_menu {
@@ -303,11 +438,23 @@ body /*si besoin, mettre class speciale au body pages menu*/ {
   justify-content: center;
   background-color: #ffffff;
 }
+
+.Header_menu--sizer {
+  @include centerizer;
+  position: relative;
+  height: 63px;
+  width: 100%;
+}
+
 .Header_title {
-  font-family: var(--title-font);
-  font-size: larger;
-  align-items: center;
-  margin: auto; /* WIP Pourquoi cela fonctionne ?*/
+  font-family: $Title-font;
+  margin: 0;
+  text-align: center;
+}
+
+.fleche {
+  align-self: center;
+  margin-left: 10px;
 }
 .Top_image_container {
   display: flex;
@@ -317,69 +464,123 @@ body /*si besoin, mettre class speciale au body pages menu*/ {
 
 .Top_image {
   object-fit: cover;
+  position: relative;
   width: 100%;
   height: 280px;
 }
-
+.titre_heart-padding {
+  padding: 10px;
+}
 .Main_menu {
   position: relative;
-  background-color: var(--pale-greyish-background);
+  background-color: $GreyBackground;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 25px 25px 0px 0px;
-  margin-top: -20px; /*valeure negative poru chevauchement sur img*/
+  width: 100%;
+
+  margin: 0 auto;
+  margin-top: -20px;
 }
 #Titre_restaurant {
-  font-family: var(--title-font);
+  font-family: $Title-font;
   font-weight: 400;
   font-style: italic;
 }
+#Card_group_1,
+#Card_group_2,
+#Card_group_3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-.Card_group_title {
-  font-family: "roboto";
-  font-weight: 400;
+  @include Menu_group--animator;
 }
 
+#Card_group_1 {
+  animation: Yaakov 0.5s forwards; //Fait en sorte que l'animation s'arrete la ou elle fini/
+  @include Menu_group--animator;
+}
+#Card_group_2 {
+  animation: Yaakov 1s forwards;
+  @include Menu_group--animator;
+}
+#Card_group_3 {
+  animation: Yaakov 1.5s forwards;
+  @include Menu_group--animator;
+}
+
+.Card_group_title-aligner {
+  width: 90%;
+  display: flex;
+}
+.Card_group_title {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.Underline_group_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: $Tertiary-color 3px SOLID;
+  width: 65px;
+  margin-bottom: 10;
+}
+.Checkbox_label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .carte {
   position: relative;
   border-radius: 15px;
-  background-color: rgb(87, 183, 32);
-  border: 1px solid #fb0505;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   display: flex;
-  // flex-direction: column;
+
   justify-content: space-between;
-  // background-color: var(--pale-greyish-background);
-  width: 95%;
+
+  width: 90%;
   margin: 5px 0px 5px 0px;
   display: flex;
   overflow: hidden;
-  &:focus .Animation_card-end {
-    width: 15%;
-    transition: 200ms;
-    opacity: 1;
+  text-overflow: ellipsis;
+  transition: transform 5000ms;
+
+  white-space: nowrap; // Permet de faire en sorte que le texte ne se wrap pas
+  .carte:hover {
+    transform: scale(1.15);
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   }
 }
 
 .Animation_card {
+  width: 100%;
   padding: 20px;
 }
 
 .Animation_card-end {
-  background-color: #99e2d0;
+  background-color: $Tertiary-color;
   width: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
+  text-overflow: ellipsis;
+  transform: scale(1.15);
+  transition: 1000ms;
+
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .haut-gauche {
-  align-self: flex-start;
   padding-bottom: 25px;
+  font-weight: 500;
 }
 
 .bas {
@@ -388,19 +589,74 @@ body /*si besoin, mettre class speciale au body pages menu*/ {
 }
 
 .bas-gauche {
+  font-weight: 300;
   align-self: flex-start;
   justify-content: space-between;
+  text-overflow: ellipsis;
 }
 
 .bas-droite {
+  font-weight: 700;
   align-self: flex-start;
+  text-overflow: ellipsis;
 }
 
-footer /*Conflit*/ {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-  background-color: #353535;
+.checkbox {
+  display: none;
+}
+.checkbox:checked + .Checkbox_label .carte .Animation_card-end {
+  width: 15%;
+  transform: scale(1.15);
+  transition: 1000ms;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+.Button-animator {
+  opacity: 0;
+  animation: Yaakov 2.5s forwards;
+  transform: translateY(20px);
+  @keyframes Yaakov {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.Button_container {
+  padding: 25px 0px 25px 0px;
+}
+#footer_secondaryPage {
+  background-color: $FooterColor;
+}
+
+@media (min-width: 767px) {
+  .Header_menu--sizer {
+    @include centerizer;
+    height: 96px;
+    width: 100%;
+  }
+
+  .Top_image {
+    height: 383px;
+  }
+
+  .Main_menu {
+    width: 73.26%;
+  }
+  .fa-lg {
+    font-size: 1.25em;
+    line-height: 0.05em;
+    vertical-align: -0.075em;
+  }
+
+  #footer_secondaryPage {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+    height: 114px;
+    background-color: $FooterColor;
+  }
 }
 
 .fa-utensils /*Conflit meyoutar*/ {
@@ -418,10 +674,10 @@ footer /*Conflit*/ {
   display: flex;
   justify-content: flex-start;
   padding-left: 10px;
+  font-size: 2.25em;
 }
 
 .fa-circle-check {
   color: white;
   font-size: xx-large;
 }
-/*Border Bottom pour soulignage de titre */
