@@ -47,6 +47,57 @@ body .roboto-black {
   font-style: normal;
 }
 
+.Fade_animation {
+  opacity: 0;
+  animation: fadeInAnimation forwards 1.5s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: 0s loader_fade_out 3s forwards;
+}
+@keyframes loader_fade_out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9356dc;
+  border-right: 16px solid #ff79da;
+  border-bottom: 16px solid #99e2d0;
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 #primaryPage_body {
   background-color: #f6f6f6;
   margin: 0px;
@@ -248,6 +299,7 @@ body .roboto-black {
 .Master_container {
   display: flex;
   height: 33%;
+  padding-left: 5px;
 }
 
 .Text_container {
@@ -257,7 +309,7 @@ body .roboto-black {
 }
 
 .Card_title {
-  padding: 10 px 15px 0px 15px;
+  padding: 10px 15px 0px 15px;
   margin: 0px;
 }
 
@@ -419,6 +471,10 @@ body .roboto-black {
     width: 100%;
     margin-bottom: 50px;
   }
+  .Card_title {
+    padding: 34px 15px 0px 15px;
+    margin: 0px;
+  }
   #Footer_index {
     display: flex;
     flex-direction: row-reverse;
@@ -465,6 +521,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .fleche {
   position: absolute;
   left: 0;
+  color: black;
 }
 
 .Header_menu {
@@ -599,7 +656,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   justify-content: flex-start;
   border-bottom: #99e2d0 3px SOLID;
   width: 65px;
-  margin-bottom: 10;
+  margin-bottom: 10px;
 }
 
 .Checkbox_label {
@@ -732,24 +789,6 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
     background-color: #353535;
   }
 }
-.fa-utensils {
-  display: inline;
-  justify-content: center;
-  color: white;
-}
-
-.fa-handshake-angle {
-  color: white;
-  display: inline-block;
-}
-
-.fa-arrow-left {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 10px;
-  font-size: 2.25em;
-}
-
 .fa-circle-check {
   color: white;
   font-size: xx-large;

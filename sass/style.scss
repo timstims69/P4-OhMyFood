@@ -9,52 +9,52 @@ body {
   height: 100%;
   width: 100%;
 }
-// .Fade_animation {
-//   opacity: 0;
-//   animation: fadeInAnimation forwards 1.5s;
-//   //Forwads stops it at the last state of animation
-//   // 1.5 makes it so it makes 1.5s to show the page
-//   animation-delay: 3s; // = How long the page hides
-//   animation-iteration-count: 1;
-//   @include fadeInAnimation;
-// }
+.Fade_animation {
+  opacity: 0;
+  animation: fadeInAnimation forwards 1.5s;
+  //Forwads stops it at the last state of animation
+  // 1.5 makes it so it makes 1.5s to show the page
+  animation-delay: 3s; // = How long the page hides
+  animation-iteration-count: 1;
+  @include fadeInAnimation;
+}
 
-// .loader_container {
-//   @include centerizer;
-//   @include loader_fade_out;
-//   height: 100vh;
-//   animation: 0s loader_fade_out 3s forwards;
-//   //0s so it disapears instantly (wich is its intended animation btw)
-// }
+.loader_container {
+  @include centerizer;
+  @include loader_fade_out;
+  height: 100vh;
+  animation: 0s loader_fade_out 3s forwards;
+  //0s so it disapears instantly (wich is its intended animation btw)
+}
 
-// .loader {
-//   border: 16px solid #f3f3f3;
-//   border-radius: 50%;
-//   border-top: 16px solid $Primary-color;
-//   border-right: 16px solid $Secondary-color;
-//   border-bottom: 16px solid $Tertiary-color;
-//   width: 120px;
-//   height: 120px;
-//   animation: spin 3s linear infinite;
-// }
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid $Primary-color;
+  border-right: 16px solid $Secondary-color;
+  border-bottom: 16px solid $Tertiary-color;
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear infinite;
+}
 
-// @-webkit-keyframes spin {
-//   0% {
-//     -webkit-transform: rotate(0deg);
-//   }
-//   100% {
-//     -webkit-transform: rotate(360deg);
-//   }
-// }
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
 
-// @keyframes spin {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 #primaryPage_body {
   background-color: $GreyBackground;
@@ -250,6 +250,7 @@ body {
 .Master_container {
   display: flex;
   height: 33%;
+  padding-left: 5px;
 }
 
 .Text_container {
@@ -259,7 +260,7 @@ body {
 }
 
 .Card_title {
-  padding: 10 px 15px 0px 15px;
+  padding: 10px 15px 0px 15px;
   margin: 0px;
 }
 
@@ -430,7 +431,10 @@ body {
     width: 100%;
     margin-bottom: 50px;
   }
-
+  .Card_title {
+    padding: 34px 15px 0px 15px;
+    margin: 0px;
+  }
   #Footer_index {
     display: flex;
     flex-direction: row-reverse;
@@ -483,6 +487,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .fleche {
   position: absolute;
   left: 0;
+  color: black;
 }
 
 .Header_menu {
@@ -579,7 +584,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   justify-content: flex-start;
   border-bottom: $Tertiary-color 3px SOLID;
   width: 65px;
-  margin-bottom: 10;
+  margin-bottom: 10px;
 }
 .Checkbox_label {
   display: flex;
@@ -709,24 +714,6 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
     height: 114px;
     background-color: $FooterColor;
   }
-}
-
-.fa-utensils /*Conflit meyoutar*/ {
-  display: inline;
-  justify-content: center;
-  color: white;
-}
-
-.fa-handshake-angle /*Conflit meyoutar*/ {
-  color: white;
-  display: inline-block;
-}
-
-.fa-arrow-left /*Conflit meyoutar*/ {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 10px;
-  font-size: 2.25em;
 }
 
 .fa-circle-check {
