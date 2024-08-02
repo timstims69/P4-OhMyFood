@@ -47,39 +47,11 @@ body .roboto-black {
   font-style: normal;
 }
 
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 #primaryPage_body {
+  background-color: #f6f6f6;
   margin: 0px;
   font-family: "Roboto";
   margin: 0;
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .Home-header {
@@ -103,7 +75,7 @@ body .roboto-black {
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 50px;
   z-index: 1;
   position: relative;
 }
@@ -124,11 +96,18 @@ body .roboto-black {
 
 .section_title {
   padding-left: 25px;
+  padding-top: 25px;
+}
+
+#primaryPage_main {
+  height: 70%;
+  width: 100%;
 }
 
 .Main_explore_title {
   margin: 0px;
   padding-top: 15px;
+  margin-top: 0px;
 }
 
 .Main_explore {
@@ -144,6 +123,7 @@ body .roboto-black {
   font-weight: 600;
   padding: 0px 50px 0px 50px;
   transition: 1s;
+  cursor: pointer;
 }
 
 .Button-purple:hover {
@@ -158,6 +138,7 @@ body .roboto-black {
 
 #Main_function {
   background-color: white;
+  height: 450px;
 }
 
 .Main_function-centerizer {
@@ -203,8 +184,13 @@ body .roboto-black {
   justify-content: space-around;
 }
 
-/*A clarfier */
+/*leavine*/
 #Main_restaurant {
+  margin-bottom: 25px;
+  background-color: #f6f6f6;
+}
+
+#Main_restaurant--sizer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,20 +198,29 @@ body .roboto-black {
   flex-wrap: wrap;
 }
 
+.Anchor-sizer {
+  height: 250px;
+  width: 90%;
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
 .Restaurant_card {
   display: flex;
   flex-direction: column;
   height: 251px;
-  width: 90%;
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin-top: 15px;
 }
 
 .Card_image_container {
   display: flex;
-  height: 66%;
+  height: 70%;
   justify-content: flex-end;
 }
 
@@ -262,7 +257,7 @@ body .roboto-black {
 }
 
 .Card_title {
-  padding: 15px 15px 0px 15px;
+  padding: 10 px 15px 0px 15px;
   margin: 0px;
 }
 
@@ -276,12 +271,11 @@ body .roboto-black {
 .Card_subtitle {
   display: flex;
   flex: 1;
-  padding: 7px 15px 15px 15px;
+  padding: 5px 0px 15px 15px;
 }
 
 #Footer_index {
   height: 375px;
-  margin-top: 100px;
 }
 
 #footer_logo {
@@ -376,12 +370,19 @@ body .roboto-black {
   #primaryPage_body {
     background-color: #f6f6f6;
     font-family: "Roboto";
+    height: 100%;
+    width: 100%;
   }
   .section_title--aligner {
     margin: 0 auto;
+    width: 76%;
+  }
+  .section_title {
+    padding-left: 0px;
   }
   #Main_function {
     padding: 20px 0px 40px 0px;
+    height: 250px;
   }
   .Main_function-centerizer {
     display: flex;
@@ -395,35 +396,45 @@ body .roboto-black {
   .Main_explore {
     height: 196px;
   }
-  #Main_restaurant {
+  #Main_restaurant--sizer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
-    height: 750px;
+    height: 1000px;
+  }
+  .Anchor-sizer {
+    height: 42%;
+    width: 45%;
+    text-decoration: none;
+    color: black;
   }
   .Restaurant_card {
     display: flex;
     flex-direction: column;
     height: 251px;
-    height: 45%;
-    width: 45%;
+    height: 100%;
+    width: 100%;
     margin-bottom: 50px;
   }
   #Footer_index {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
     gap: 16px;
-    height: 114px;
+    height: 165px;
     background-color: #353535;
   }
   #footer_logo {
     font-family: "Shrikhand", serif;
     color: white;
-    padding-left: 15px;
+    padding-left: 67px;
+    padding-right: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
   }
   .Footer_lines {
     display: flex;
@@ -606,6 +617,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   display: flex;
   justify-content: space-between;
   width: 90%;
+  height: 70px;
   margin: 5px 0px 5px 0px;
   display: flex;
   overflow: hidden;
@@ -621,6 +633,8 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .Animation_card {
   width: 100%;
   padding: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .Animation_card-end {
@@ -632,12 +646,11 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   opacity: 1;
   text-overflow: ellipsis;
   transform: scale(1.15);
-  transition: 1000ms;
+  transition: 500ms;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .haut-gauche {
-  padding-bottom: 25px;
   font-weight: 500;
 }
 
@@ -651,6 +664,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   align-self: flex-start;
   justify-content: space-between;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .bas-droite {
@@ -666,7 +680,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .checkbox:checked + .Checkbox_label .carte .Animation_card-end {
   width: 15%;
   transform: scale(1.15);
-  transition: 1000ms;
+  transition: 500ms;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 

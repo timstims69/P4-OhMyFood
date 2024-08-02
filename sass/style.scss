@@ -9,48 +9,58 @@ body {
   height: 100%;
   width: 100%;
 }
+// .Fade_animation {
+//   opacity: 0;
+//   animation: fadeInAnimation forwards 1.5s;
+//   //Forwads stops it at the last state of animation
+//   // 1.5 makes it so it makes 1.5s to show the page
+//   animation-delay: 3s; // = How long the page hides
+//   animation-iteration-count: 1;
+//   @include fadeInAnimation;
+// }
 
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 3s linear both;
-  animation: spin 2s linear infinite;
-}
+// .loader_container {
+//   @include centerizer;
+//   @include loader_fade_out;
+//   height: 100vh;
+//   animation: 0s loader_fade_out 3s forwards;
+//   //0s so it disapears instantly (wich is its intended animation btw)
+// }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
+// .loader {
+//   border: 16px solid #f3f3f3;
+//   border-radius: 50%;
+//   border-top: 16px solid $Primary-color;
+//   border-right: 16px solid $Secondary-color;
+//   border-bottom: 16px solid $Tertiary-color;
+//   width: 120px;
+//   height: 120px;
+//   animation: spin 3s linear infinite;
+// }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+// @-webkit-keyframes spin {
+//   0% {
+//     -webkit-transform: rotate(0deg);
+//   }
+//   100% {
+//     -webkit-transform: rotate(360deg);
+//   }
+// }
+
+// @keyframes spin {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 
 #primaryPage_body {
+  background-color: $GreyBackground;
   margin: 0px;
   font-family: "Roboto";
   margin: 0;
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  @include Fade_out_animation;
-}
-.Fade_out--animation {
 }
 
 .Home-header {
@@ -73,7 +83,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 50px;
   z-index: 1;
   position: relative;
 }
@@ -94,11 +104,17 @@ body {
 
 .section_title {
   padding-left: 25px;
+  padding-top: 25px;
+}
+#primaryPage_main {
+  height: 70%;
+  width: 100%;
 }
 
 .Main_explore_title {
   margin: 0px;
   padding-top: 15px;
+  margin-top: 0px;
 }
 
 .Main_explore {
@@ -118,6 +134,7 @@ body {
   font-weight: 600;
   padding: 0px 50px 0px 50px;
   transition: 1s;
+  cursor: pointer;
 }
 .Button-purple:hover {
   filter: opacity(0.8);
@@ -131,7 +148,9 @@ body {
 
 #Main_function {
   background-color: white;
+  height: 450px;
 }
+
 .Main_function-centerizer {
   @include centerizer;
   flex-direction: column;
@@ -165,38 +184,50 @@ body {
   color: white;
   margin-left: -11px;
 }
-
+// leavine
 .Function_number #Main_restaurant {
   background-color: $GreyBackground;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-/*A clarfier */
+
+/*leavine*/
 #Main_restaurant {
+  margin-bottom: 25px;
+  background-color: $GreyBackground;
+}
+#Main_restaurant--sizer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-a {
+
+.Anchor-sizer {
+  height: 250px;
+  width: 90%;
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
+
 .Restaurant_card {
   display: flex;
   flex-direction: column;
   height: 251px;
-
-  width: 90%;
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin-top: 15px;
 }
 
 .Card_image_container {
   display: flex;
-  height: 66%;
+  height: 70%;
   justify-content: flex-end;
 }
 
@@ -228,7 +259,7 @@ a {
 }
 
 .Card_title {
-  padding: 15px 15px 0px 15px;
+  padding: 10 px 15px 0px 15px;
   margin: 0px;
 }
 
@@ -241,9 +272,8 @@ a {
 
 .Card_subtitle {
   display: flex;
-  // justify-content: space-between;
   flex: 1;
-  padding: 7px 15px 15px 15px;
+  padding: 5px 0px 15px 15px;
 }
 
 .Card_heart {
@@ -251,7 +281,6 @@ a {
 
 #Footer_index {
   height: 375px;
-  margin-top: 100px;
 }
 
 #footer_logo {
@@ -347,12 +376,21 @@ a {
   #primaryPage_body {
     background-color: $GreyBackground;
     font-family: "Roboto";
+    height: 100%;
+    width: 100%;
   }
   .section_title--aligner {
     margin: 0 auto;
+    width: 76%;
   }
+
+  .section_title {
+    padding-left: 0px;
+  }
+
   #Main_function {
     padding: 20px 0px 40px 0px;
+    height: 250px;
   }
 
   .Main_function-centerizer {
@@ -366,38 +404,51 @@ a {
     height: 196px;
   }
 
-  #Main_restaurant {
+  #Main_restaurant--sizer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
-    height: 750px;
+    height: 1000px;
   }
 
+  #Main_restaurant {
+  }
+  .Anchor-sizer {
+    height: 42%;
+    width: 45%;
+    text-decoration: none;
+    color: black;
+  }
   .Restaurant_card {
     display: flex;
     flex-direction: column;
     height: 251px;
-    height: 45%;
-    width: 45%;
+    height: 100%;
+    width: 100%;
     margin-bottom: 50px;
   }
 
   #Footer_index {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     gap: 16px;
-    height: 114px;
+    height: 165px;
     background-color: $FooterColor;
   }
 
   #footer_logo {
     font-family: $Title-font;
     color: white;
-    padding-left: 15px;
+    padding-left: 67px;
+    padding-right: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
   }
 
   .Footer_lines {
@@ -405,6 +456,7 @@ a {
     justify-content: stretch;
   }
 }
+
 /*
 
 Commentr  gerer le responsive de main restaurant ? 
@@ -537,15 +589,13 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .carte {
   position: relative;
   border-radius: 15px;
-
   background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   display: flex;
-
   justify-content: space-between;
-
   width: 90%;
+  height: 70px;
   margin: 5px 0px 5px 0px;
   display: flex;
   overflow: hidden;
@@ -562,6 +612,8 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .Animation_card {
   width: 100%;
   padding: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .Animation_card-end {
@@ -573,13 +625,12 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   opacity: 1;
   text-overflow: ellipsis;
   transform: scale(1.15);
-  transition: 1000ms;
+  transition: 500ms;
 
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .haut-gauche {
-  padding-bottom: 25px;
   font-weight: 500;
 }
 
@@ -593,6 +644,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   align-self: flex-start;
   justify-content: space-between;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .bas-droite {
@@ -607,7 +659,7 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
 .checkbox:checked + .Checkbox_label .carte .Animation_card-end {
   width: 15%;
   transform: scale(1.15);
-  transition: 1000ms;
+  transition: 500ms;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 .Button-animator {

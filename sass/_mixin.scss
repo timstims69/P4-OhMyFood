@@ -15,7 +15,7 @@
   }
 }
 
-@mixin Fade_out_animation {
+@mixin fadeInAnimation {
   @keyframes fadeInAnimation {
     0% {
       opacity: 0;
@@ -23,6 +23,21 @@
 
     100% {
       opacity: 1;
+    }
+  }
+}
+
+@mixin loader_fade_out {
+  @keyframes loader_fade_out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      height: 0;
+      // So it doesn't take space over the header
+      opacity: 0;
+      overflow: hidden;
     }
   }
 }
