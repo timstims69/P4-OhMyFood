@@ -317,13 +317,13 @@ body .roboto-black {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 2;
+  flex: 1.5;
 }
 
 .Card_subtitle {
   display: flex;
   flex: 1;
-  padding: 5px 0px 15px 15px;
+  padding: 0px 0px 15px 15px;
 }
 
 #Footer_index {
@@ -471,8 +471,11 @@ body .roboto-black {
     width: 100%;
     margin-bottom: 50px;
   }
+  .Card_image_container {
+    height: 75%;
+  }
   .Card_title {
-    padding: 34px 15px 0px 15px;
+    padding: 30px 15px 0px 15px;
     margin: 0px;
   }
   #Footer_index {
@@ -783,7 +786,6 @@ certaine valeures doivent etres fixe et certaines en pourcentage? lEQUELLES ?
   #footer_secondaryPage {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
     gap: 16px;
     height: 114px;
     background-color: #353535;
